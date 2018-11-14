@@ -34,11 +34,11 @@ pipeline {
       }
       
       options {
-        timeout(time: 5, unit: 'SECONDS')
+        timeout(time: 5, unit: 'MINUTES')
       }
       
       input {
-        message "Should we continue?"
+        message "Lee, please click Proceed.  :)"
         submitter "LeeDavis"
         submitterParameter "APPROVER"
       }
