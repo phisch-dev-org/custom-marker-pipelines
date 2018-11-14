@@ -46,8 +46,7 @@ pipeline {
       }
       
       input {
-        message "Lee, please click Proceed.  :)"
-        submitter "LeeDavis"
+        message "Should we deploy?"
         submitterParameter "APPROVER"
       }
       
