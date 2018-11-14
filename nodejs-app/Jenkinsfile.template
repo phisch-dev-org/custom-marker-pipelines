@@ -1,4 +1,4 @@
-library 'cd-accel'
+library 'cd-accel@completed'
 def testPodYaml = libraryResource 'podtemplates/nodejs-app/web-test-pod.yml'
 def loadTestPodYaml = libraryResource 'podtemplates/nodejs-app/load-test-pod.yml'
 
@@ -92,15 +92,15 @@ pipeline {
     }
     
     stage('Build and Push Image') {
-      agent any
       when {
         beforeAgent true
         branch 'master'
       }
       
       steps {
-        echo 'TODO - build and push image'
-        unstash 'app'
+        dockerBuildPush(env.IMAGE_NAME, env.IMAGE_TAG) {
+          unstash 'app'
+        }
       }
       
       post {
